@@ -9,12 +9,12 @@ import java.util.List;
 public class MainMenu implements Menu {
     private final List<Command> commands;
 
-    public MainMenu(ConsoleUi consoleUI) {
+    public MainMenu(ConsoleUi consoleUi) {
         commands = new ArrayList<>();
-        commands.add(new Add(consoleUI));
-        commands.add(new Open(consoleUI));
-        commands.add(new Collection(consoleUI));
-        commands.add(new Exit(consoleUI));
+        commands.add(new Add(consoleUi));
+        commands.add(new Open(consoleUi));
+        commands.add(new Collection(consoleUi));
+        commands.add(new Exit(consoleUi));
     }
 
     @Override

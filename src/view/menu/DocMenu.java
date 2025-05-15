@@ -12,11 +12,11 @@ import java.util.List;
 public class DocMenu implements Menu {
     private final List<Command> commands;
 
-    public DocMenu(ConsoleUi consoleUI) {
+    public DocMenu(ConsoleUi consoleUi) {
         commands = new ArrayList<>();
-        commands.add(new Search(consoleUI));
-        commands.add(new Change(consoleUI));
-        commands.add(new ExitDoc(consoleUI));
+        commands.add(new Search(consoleUi));
+        commands.add(new Change(consoleUi));
+        commands.add(new ExitDoc(consoleUi));
     }
 
     @Override

@@ -9,13 +9,13 @@ import java.util.List;
 public class CollectionMenu implements Menu {
     private final List<Command> commands;
 
-    public CollectionMenu(ConsoleUi consoleUI) {
+    public CollectionMenu(ConsoleUi consoleUi) {
         commands = new ArrayList<>();
-        commands.add(new ByAuthor(consoleUI));
-        commands.add(new ByDate(consoleUI));
-        commands.add(new BySize(consoleUI));
-        commands.add(new ChangeRoot(consoleUI));
-        commands.add(new ExitCollection(consoleUI));
+        commands.add(new ByAuthor(consoleUi));
+        commands.add(new ByDate(consoleUi));
+        commands.add(new BySize(consoleUi));
+        commands.add(new ChangeRoot(consoleUi));
+        commands.add(new ExitCollection(consoleUi));
     }
 
     @Override
