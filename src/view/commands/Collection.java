@@ -1,9 +1,9 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class Collection extends Command {
-    public Collection(ConsoleUI consoleUi) {
+    public Collection(ConsoleUi consoleUi) {
         super(consoleUi);
         menuText = "Коллекция";
     }

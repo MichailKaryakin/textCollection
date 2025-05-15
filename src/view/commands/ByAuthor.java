@@ -1,9 +1,9 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class ByAuthor extends Command {
-    public ByAuthor(ConsoleUI consoleUi) {
+    public ByAuthor(ConsoleUi consoleUi) {
         super(consoleUi);
         menuText = "Сортировать по автору";
     }

@@ -1,9 +1,9 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class Open extends Command {
-    public Open(ConsoleUI consoleUi) {
+    public Open(ConsoleUi consoleUi) {
         super(consoleUi);
         menuText = "Открыть документ";
     }

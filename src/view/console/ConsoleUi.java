@@ -1,6 +1,6 @@
 package view.console;
 
-import controller.Controller;
+import controller.ControllerImpl;
 import view.menu.CollectionMenu;
 import view.menu.MainMenu;
 import view.menu.Menu;
@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ConsoleUI implements View {
+public class ConsoleUi implements View {
     private final InputOutput inputOutput;
-    private final Controller controller;
+    private final ControllerImpl controllerImpl;
     private final MainMenu mainMenu;
     private final DocMenu docMenu;
     private final CollectionMenu collectionMenu;
@@ -21,9 +21,9 @@ public class ConsoleUI implements View {
     private boolean exitCollection;
     private int documentId;
 
-    public ConsoleUI() {
+    public ConsoleUi() {
         inputOutput = new InputOutput();
-        controller = new Controller(this);
+        controllerImpl = new ControllerImpl(this);
         docMenu = new DocMenu(this);
         mainMenu = new MainMenu(this);
         collectionMenu = new CollectionMenu(this);
@@ -33,7 +33,7 @@ public class ConsoleUI implements View {
     }
 
     private void displayCollection() {
-        controller.displayCollection();
+        controllerImpl.displayCollection();
     }
 
     private void execute(Menu menu) {
@@ -72,20 +72,20 @@ public class ConsoleUI implements View {
 
         inputOutput.printLine("Введите автора документа:");
         String author = inputOutput.scanLine();
-        controller.addDocument(text, author, new Date());
+        controllerImpl.addDocument(text, author, new Date());
     }
 
     public void openDocument() {
         inputOutput.printLine("Введите номер документа:");
         documentId = inputOutput.scanInt() - 1;
-        while (controller.displayPage(documentId)) {
+        while (controllerImpl.displayPage(documentId)) {
             boolean proceed = false;
             while (!proceed) {
                 inputOutput.blankLine();
                 inputOutput.printLine("Любое число - следующая страница, единица - предыдушая.");
                 int userChoice = inputOutput.scanInt();
                 if (userChoice == 1) {
-                    if (!controller.displayPreviousPage(documentId)) {
+                    if (!controllerImpl.displayPreviousPage(documentId)) {
                         inputOutput.printLine("Вы на первой странице.");
                     }
                 } else {
@@ -117,26 +117,26 @@ public class ConsoleUI implements View {
         String oldSequence = inputOutput.scanLine();
         inputOutput.printLine("Введите новую последовательность:");
         String newSequence = inputOutput.scanLine();
-        controller.changeDocument(oldSequence, newSequence, lineId, documentId);
+        controllerImpl.changeDocument(oldSequence, newSequence, lineId, documentId);
     }
 
     public void searchDocument() {
         inputOutput.clearBuffer();
         inputOutput.printLine("Введите последовательность:");
         String sequence = inputOutput.scanLine();
-        controller.searchDocument(sequence, documentId);
+        controllerImpl.searchDocument(sequence, documentId);
     }
 
     public void displayBySize() {
-        controller.displayCollectionBySize();
+        controllerImpl.displayCollectionBySize();
     }
 
     public void displayByDate() {
-        controller.displayCollectionByDate();
+        controllerImpl.displayCollectionByDate();
     }
 
     public void displayByAuthor() {
-        controller.displayCollectionByAuthor();
+        controllerImpl.displayCollectionByAuthor();
     }
 
     public void changeRoot() {
@@ -145,7 +145,7 @@ public class ConsoleUI implements View {
         String directory = inputOutput.scanLine();
         String fileName = inputOutput.scanLine();
         String newPath = "C:\\Users\\micha\\Documents\\programming\\code\\java\\textCollection\\src\\" + directory + "\\" + fileName + ".txt";
-        controller.changeCollectionRoot(newPath);
+        controllerImpl.changeCollectionRoot(newPath);
     }
 
     public void exitProgram() {

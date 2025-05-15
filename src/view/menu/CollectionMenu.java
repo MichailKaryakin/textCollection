@@ -1,7 +1,7 @@
 package view.menu;
 
 import view.commands.*;
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 public class CollectionMenu implements Menu {
     private final List<Command> commands;
 
-    public CollectionMenu(ConsoleUI consoleUI) {
+    public CollectionMenu(ConsoleUi consoleUI) {
         commands = new ArrayList<>();
         commands.add(new ByAuthor(consoleUI));
         commands.add(new ByDate(consoleUI));

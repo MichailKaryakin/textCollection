@@ -1,9 +1,9 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class Add extends Command {
-    public Add(ConsoleUI consoleUi) {
+    public Add(ConsoleUi consoleUi) {
         super(consoleUi);
         menuText = "Добавить документ";
     }

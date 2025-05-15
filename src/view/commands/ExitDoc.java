@@ -1,9 +1,9 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class ExitDoc extends Command {
-    public ExitDoc(ConsoleUI consoleUi) {
+    public ExitDoc(ConsoleUi consoleUi) {
         super(consoleUi);
         menuText = "Выход";
     }

@@ -1,9 +1,9 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class BySize extends Command {
-    public BySize(ConsoleUI consoleUi) {
+    public BySize(ConsoleUi consoleUi) {
         super(consoleUi);
         menuText = "Сортировать по размеру";
     }

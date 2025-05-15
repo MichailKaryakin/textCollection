@@ -1,9 +1,9 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class ChangeRoot extends Command {
-    public ChangeRoot(ConsoleUI consoleUi) {
+    public ChangeRoot(ConsoleUi consoleUi) {
         super(consoleUi);
         menuText = "Расположение";
     }

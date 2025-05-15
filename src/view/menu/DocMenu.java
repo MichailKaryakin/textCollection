@@ -1,6 +1,6 @@
 package view.menu;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 import view.commands.Change;
 import view.commands.Command;
 import view.commands.ExitDoc;
@@ -12,7 +12,7 @@ import java.util.List;
 public class DocMenu implements Menu {
     private final List<Command> commands;
 
-    public DocMenu(ConsoleUI consoleUI) {
+    public DocMenu(ConsoleUi consoleUI) {
         commands = new ArrayList<>();
         commands.add(new Search(consoleUI));
         commands.add(new Change(consoleUI));

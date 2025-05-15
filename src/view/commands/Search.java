@@ -1,9 +1,9 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class Search extends Command {
-    public Search(ConsoleUI consoleUi) {
+    public Search(ConsoleUi consoleUi) {
         super(consoleUi);
         menuText = "Поиск по документу";
     }

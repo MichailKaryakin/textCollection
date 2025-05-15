@@ -1,12 +1,12 @@
 package view.commands;
 
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public abstract class Command {
     String menuText;
-    ConsoleUI consoleUi;
+    ConsoleUi consoleUi;
 
-    public Command(ConsoleUI consoleUi) {
+    public Command(ConsoleUi consoleUi) {
         this.consoleUi = consoleUi;
     }
 

@@ -1,8 +1,8 @@
-import view.console.ConsoleUI;
+import view.console.ConsoleUi;
 
 public class Entry {
     public static void main(String[] args) {
-        ConsoleUI consoleUI = new ConsoleUI();
+        ConsoleUi consoleUI = new ConsoleUi();
         consoleUI.run();
     }
 }
