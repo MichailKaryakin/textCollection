@@ -21,15 +21,6 @@ public class ConsoleUI implements View {
     private boolean exitCollection;
     private int documentId;
 
-    private void displayCollection() {
-        controller.displayCollection();
-    }
-
-    private void execute(Menu menu) {
-        int numMenu = inputOutput.scanInt();
-        menu.execute(numMenu);
-    }
-
     public ConsoleUI() {
         inputOutput = new InputOutput();
         controller = new Controller(this);
@@ -39,6 +30,15 @@ public class ConsoleUI implements View {
         exit = false;
         exitDoc = false;
         exitCollection = false;
+    }
+
+    private void displayCollection() {
+        controller.displayCollection();
+    }
+
+    private void execute(Menu menu) {
+        int numMenu = inputOutput.scanInt();
+        menu.execute(numMenu);
     }
 
     @Override

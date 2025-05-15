@@ -15,19 +15,19 @@ public class Document implements Serializable {
     private final String author;
     private final Date creationDate;
 
+    public Document(List<String> text, String author, Date creationDate) {
+        this.text = text;
+        this.size = countSize();
+        this.author = author;
+        this.creationDate = creationDate;
+    }
+
     private int countSize() {
         int size = 0;
         for (String string : text) {
             size += string.length();
         }
         return size;
-    }
-
-    public Document(List<String> text, String author, Date creationDate) {
-        this.text = text;
-        this.size = countSize();
-        this.author = author;
-        this.creationDate = creationDate;
     }
 
     public List<String> getPage() {

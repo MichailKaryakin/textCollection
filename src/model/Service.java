@@ -14,6 +14,15 @@ public class Service {
     private final String pathStoredAt = "C:\\Users\\micha\\Documents\\programming\\code\\java\\textCollection\\src\\data\\path.txt";
     private String filePath;
 
+    public Service() {
+        this.repository = new Repository(new ArrayList<>());
+        try {
+            filePath = Files.readString(Path.of(pathStoredAt));
+            repository.setLibraryStorage(readStorage());
+        } catch (IOException | ClassNotFoundException ignored) {
+        }
+    }
+
     private void writeStorage(List<Document> documentList) throws IOException {
         FileOutputStream fos = new FileOutputStream
                 (filePath);
@@ -38,15 +47,6 @@ public class Service {
         } catch (EOFException ignored) {
         }
         return documentList;
-    }
-
-    public Service() {
-        this.repository = new Repository(new ArrayList<>());
-        try {
-            filePath = Files.readString(Path.of(pathStoredAt));
-            repository.setLibraryStorage(readStorage());
-        } catch (IOException | ClassNotFoundException ignored) {
-        }
     }
 
     public List<Document> getCollection() {
