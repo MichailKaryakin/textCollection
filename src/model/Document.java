@@ -11,7 +11,7 @@ public class Document implements Serializable {
     private List<String> text;
     private int size;
     private int pageNumber = 0;
-    private final int linesOnPage = 12;
+    private final int linesOnPage = 15;
     private final String author;
     private final Date creationDate;
 
